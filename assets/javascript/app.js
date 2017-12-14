@@ -1,6 +1,10 @@
 
 console.log("hello");
 
+$('#projectName').addClass('animated rubberBand');
+
+//CODE NEEDS TO BE ADDED TO APPEND TEAM NAME TO DOM USING ANIMATION
+$('#teamName').addClass('animated rubberBand');
 
 $(".teamList").on("click", function() {
 	var team = $(this).attr("data-name")
