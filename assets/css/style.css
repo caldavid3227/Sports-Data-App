@@ -26,6 +26,7 @@ body {
   z-index: 20;
 }
 
+
 /* Flip around the padding for proper display in narrow viewports */
 .navbar-wrapper > .container {
   padding-right: 0;
@@ -67,6 +68,9 @@ body {
 }
 
 
+.myDiv {
+  color: pink;
+}
 /* MARKETING CONTENT
 -------------------------------------------------- */
 
