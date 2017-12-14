@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 console.log("hello");
 
 
@@ -90,4 +88,4 @@ $(".teamList").on("click", function() {
 
    
 })
->>>>>>> dcc7f7626208c9a276aeeb9566aec7ddfbe9aa04
+
