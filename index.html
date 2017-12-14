@@ -15,15 +15,15 @@
     <!-- Bootstrap core CSS -->
     <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+      <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
 
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
@@ -33,11 +33,13 @@
 
     <link href="assets/css/style.css" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+
+
     <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-      <!-- or -->
-      <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -60,8 +62,12 @@
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
+
+                <li class="active"><a href="signUp.html">Newsletter Signup</a></li>
+
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams <span class="caret"></span></a>
+
                   <ul class="dropdown-menu">
                     <li class="teamList" data-name="ARI" ><a href="#" >ARI</a></li>
                     <li class="teamList" data-name="ATL"><a href="#">ATL</a></li>
@@ -168,31 +174,27 @@
      <div class= "container">
         <div class="row">
           <div class="col-lg-6">
-             <h2 id="myDiv"><center> Injuries/Inactives </center></h2>
+             <center><h2> Injuries/Inactives </h2>
+              <br>
+                <h4><div id = "myDiv"></div></h4></center>
           </div>
+
           <div class="col-lg-6">
-              <h2 id="newsDiv"><center> Team News </center></h2>
+
+              <center><h2>Team News </h2>
+                <br>
+                <h4><div id="newsDiv"> </div></h4></center>
+
           </div>
+          
 
-
-          <table class="table table-hover table-responsive" id="trainTable">
-
-            <tbody id = "trainTable">
-              <tr>
-                <td id = "teamNameDisplay"></td>
-                <td id = "statsDisplay"></td>
-                <td id = "teamNewsDisplay"></td>
-                <td id = "weatherDisplay"></td>
-
-              </tr>
-            </tbody>
-
-          </table>
         </div>
       </div>
     </div>
 
-
+          <br>
+          <br>
+          <br>
 
     <div class="container marketing">
 
@@ -224,7 +226,7 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017 TEAM &middot; </p>
+        <p>&copy; 2017 Smart Bets TEAM &middot; </p>
       </footer>
 
     </div>
@@ -237,8 +239,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
