@@ -65,19 +65,25 @@ $(".teamList").on("click", function() {
             $("#newsDiv").empty();
 
             for (var i = 0; i < 10; i++) {
-            	var newNewsDiv = $('<ul>');
-            	// var newA = $("<a>");
+            	var newNewsDiv = $('<li>');
+            	var newA = $("<a>", {
+            		text: data[i].Title,
+            		href: data[i].Url,
+            		target: "_blank",
+            		class: "noDot"
+            	});
 
-            	newNewsDiv.text(data[i].Title);
             	// newA.attr("href", data[i].Url);
 
-            	newNewsDiv.append($("<a>"));
-            		newNewsDiv.attr("src", data[i].Url);
+            	// newNewsDiv.append($("<a>"));
+            		// newA.attr("src", data[i].Url);
             	
+            	// newA.html(data[i].Title);
 
             	// newNewsDiv.append(newA);
 
             	$("#newsDiv").append(newNewsDiv);
+            	newNewsDiv.append(newA);
             }
         })
         .fail(function() {
