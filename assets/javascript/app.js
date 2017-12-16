@@ -1,8 +1,5 @@
 console.log("hello");
 
-
-// HIDING WEATHER ANIMATIONS
-
 $("#sunny").hide();
 $("#cloudy").hide();
 $("#rainy").hide();
@@ -144,9 +141,22 @@ var weatherArray = [
 }];
 
 
+
+
+
 $(".teamList").on("click", function() {
 
     $("#stormy").show();
+
+    
+    $('#weatherDiv').addClass('animated shake');
+    
+    $('#weatherDiv').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+    function(){
+        $(this).removeClass('animated shake');
+    
+    });
+
 
     var team = $(this).attr("data-name")
 
@@ -343,3 +353,4 @@ $(".teamList").on("click", function() {
 
 
 })
+
