@@ -1,4 +1,5 @@
 console.log("hello");
+console.log("new branch");
 
 $("#sunny").hide();
 $("#cloudy").hide();
