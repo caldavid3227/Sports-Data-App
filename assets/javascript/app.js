@@ -7,6 +7,7 @@ var rainy = $("#rainy");
 var snowy = $("#snowy");
 var stormy = $("#stormy");
 
+
 // sunny.hide();
 // cloudy.hide();
 // rainy.hide();
@@ -160,9 +161,11 @@ function weatherHide() {
 };
 
 
+
  function weatherAnimate(weather) {
         
         weatherHide();
+
 
         weather.show();
 
