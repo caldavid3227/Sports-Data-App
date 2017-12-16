@@ -18,7 +18,7 @@ weatherHide();
 
 
 
-$('#signUp').addClass('animated rubberBand');
+$('#projectName').addClass('animated rubberBand');
 
 //CODE NEEDS TO BE ADDED TO APPEND TEAM NAME TO DOM USING ANIMATION
 $('#teamName').addClass('animated rubberBand');
