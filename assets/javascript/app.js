@@ -204,9 +204,7 @@ function weatherHide() {
 
                 var hNum = i + 1;
 
-                $("#headline" + hNum).text(data[i].Title);
-
-                console.log(hNum);
+                $("#headline" + hNum).text(data[i].Title);              
 
                 $("#news" + hNum).attr({
                     text: "Link to Article",
@@ -214,34 +212,7 @@ function weatherHide() {
                     target: "_blank",
                     class: "noDot"
                 })
-
-
-            }
-
-            // $("#headlineOne").text(data[0].Title);
-            // $("#newsOne").append($("<a>", {
-            //         text: "Link to Article",
-            //         href: data[0].Url,
-            //         target: "_blank",
-            //         class: "noDot"
-            //     }));
-
-            // $("#headlineTwo").text(data[1].Title);
-            // $("#newsTwo").append($("<a>", {
-            //         text: "Link to Article",
-            //         href: data[1].Url,
-            //         target: "_blank",
-            //         class: "noDot"
-            //     }));
-
-            // $("#headlineTwo").text(data[2].Title);
-            // $("#newsTwo").append($("<a>", {
-            //         text: "Link to Article",
-            //         href: data[2].Url,
-            //         target: "_blank",
-            //         class: "noDot"
-            //     }));
-            
+            }           
             
         })
         .fail(function() {
