@@ -129,7 +129,7 @@ var weatherArray = [
     teamCity: "Santa Clara"
 },{
     teamName: "TB",
-    teamCity: "Tampa Bay"
+    teamCity: "Tampa"
 },
 {
     teamName: "TEN",
@@ -145,11 +145,27 @@ $(".teamList").on("click", function() {
     $("#stormy").show();
 
     
-    $('#weatherDiv').addClass('animated shake');
+    $('#weatherDiv').addClass('animated tada');
     
     $('#weatherDiv').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
     function(){
-        $(this).removeClass('animated shake');
+        $(this).removeClass('animated tada');
+    
+    });
+
+    $('#myDiv').addClass('animated tada');
+    
+    $('#myDiv').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+    function(){
+        $(this).removeClass('animated tada');
+    
+    });
+
+    $('#newsDiv').addClass('animated tada');
+    
+    $('#newsDiv').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
+    function(){
+        $(this).removeClass('animated tada');
     
     });
 
