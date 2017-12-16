@@ -285,19 +285,21 @@ $(".teamList").on("click", function() {
             console.log(secondArray);         
 
             var city = secondArray[0];
+            var hostSite = "";
 
             for (var i = 0; i < weatherArray.length; i++) {
             	if (city === weatherArray[i].teamName) {
 
-            		thirdArray.push(weatherArray[i].teamCity);
+            		// thirdArray.push(weatherArray[i].teamCity);
+                    hostSite = weatherArray[i].teamCity;
 
             	}
             }
-            console.log(thirdArray[0]);
+            // console.log(thirdArray[0]);
 
             
             // var hostSite = encodeURI(thirdArray[0]);
-            var hostSite = thirdArray[0];
+            // var hostSite = thirdArray[0];
             console.log(hostSite);
 
             if (hostSite === "Dome") {
