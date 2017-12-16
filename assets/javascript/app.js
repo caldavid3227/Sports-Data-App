@@ -1,11 +1,20 @@
 console.log("hello");
 console.log("new branch");
 
-$("#sunny").hide();
-$("#cloudy").hide();
-$("#rainy").hide();
-$("#snowy").hide();
-$("#stormy").hide();
+var sunny = $("#sunny");
+var cloudy = $("#cloudy");
+var rainy = $("#rainy");
+var snowy = $("#snowy");
+var stormy = $("#stormy");
+
+// sunny.hide();
+// cloudy.hide();
+// rainy.hide();
+// snowy.hide();
+// stormy.hide();
+
+weatherHide();
+
 
 
 $('#signUp').addClass('animated rubberBand');
@@ -131,7 +140,7 @@ var weatherArray = [
     teamCity: "Santa Clara"
 },{
     teamName: "TB",
-    teamCity: "Tampa Bay"
+    teamCity: "Tampa"
 },
 {
     teamName: "TEN",
@@ -142,9 +151,20 @@ var weatherArray = [
     teamCity: "Landover"
 }];
 
-$(".teamList").on("click", function() {
+function weatherHide() {
+        sunny.hide();
+        cloudy.hide();
+        rainy.hide();
+        snowy.hide();
+        stormy.hide();
+};
 
-    $("#stormy").show();
+
+ function weatherAnimate(weather) {
+        
+        weatherHide();
+
+        weather.show();
 
     
     $('#weatherDiv').addClass('animated shake');
@@ -154,6 +174,81 @@ $(".teamList").on("click", function() {
         $(this).removeClass('animated shake');
     
     });
+};
+
+
+  $(function() {
+        var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/News?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","25f5b86281bf4ec2b54615551885b55b");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            // alert("success");
+            console.log(data);
+
+
+            for (var i = 0; i < 3; i++) {
+
+                var hNum = i + 1;
+
+                $("#headline" + hNum).text(data[i].Title);
+
+                console.log(hNum);
+
+                $("#news" + hNum).attr({
+                    text: "Link to Article",
+                    href: data[i].Url,
+                    target: "_blank",
+                    class: "noDot"
+                })
+
+
+            }
+
+            // $("#headlineOne").text(data[0].Title);
+            // $("#newsOne").append($("<a>", {
+            //         text: "Link to Article",
+            //         href: data[0].Url,
+            //         target: "_blank",
+            //         class: "noDot"
+            //     }));
+
+            // $("#headlineTwo").text(data[1].Title);
+            // $("#newsTwo").append($("<a>", {
+            //         text: "Link to Article",
+            //         href: data[1].Url,
+            //         target: "_blank",
+            //         class: "noDot"
+            //     }));
+
+            // $("#headlineTwo").text(data[2].Title);
+            // $("#newsTwo").append($("<a>", {
+            //         text: "Link to Article",
+            //         href: data[2].Url,
+            //         target: "_blank",
+            //         class: "noDot"
+            //     }));
+            
+            
+        })
+        .fail(function() {
+            // alert("error");
+        });
+    });
+
+$(".teamList").on("click", function() {
+
+    
 
 
     var team = $(this).attr("data-name")
@@ -226,11 +321,16 @@ $(".teamList").on("click", function() {
             }
             console.log(thirdArray[0]);
 
+            
+            // var hostSite = encodeURI(thirdArray[0]);
             var hostSite = thirdArray[0];
+            console.log(hostSite);
 
             if (hostSite === "Dome") {
             	var domeText = "This game is played in a dome";
             	$("#weatherDiv").append(domeText);
+
+                weatherHide();
             }
             else {
             	var APIkey = "cce5a44b1d7a13fb2fa6a72a5b7e150d";
@@ -255,6 +355,13 @@ $(".teamList").on("click", function() {
       					cityDiv.append(tempDiv);
       					tempDiv.append(windDiv);
       					windDiv.append(humidityDiv);
+
+                            if (currentTemp < 32) {
+                                weatherAnimate(stormy);
+                            }
+                            else {
+                                weatherAnimate(sunny);
+                            }
     	
     })
 }
