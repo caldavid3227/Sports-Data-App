@@ -364,7 +364,6 @@ $(".teamList").on("click", function() {
             })
             .done(function(data) {
 
-
                 $("#newsDiv").empty();
 
                 for (var i = 0; i < 10; i++) {
