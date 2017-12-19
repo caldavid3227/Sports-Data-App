@@ -26,13 +26,13 @@
 
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.3/moment.js"></script>
 
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 
+    <!--<link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
+
     <link href="assets/css/style.css" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
@@ -59,7 +59,7 @@
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="signUp.html">About</a></li>
 
                             <li><a href="signUp.html">Newsletter Signup</a></li>
 
@@ -124,8 +124,8 @@
                 <img class="first-slide" src="assets/images/footballfield.jpg" alt="Football Field">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Headline:</h1>
-                        <p>news</p>
+                        <h1 id="headline1">Headline:</h1>
+                        <a id="news1">Link</a>
                     </div>
                 </div>
             </div>
@@ -133,8 +133,8 @@
                 <img class="second-slide" src="assets/images/football4.jpg" alt="Football">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Headline:</h1>
-                        <p>news</p>
+                        <h1 id="headline2">Headline:</h1>
+                        <a id="news2">Link</a>
                     </div>
                 </div>
             </div>
@@ -142,142 +142,141 @@
                 <img class="third-slide" src="assets/images/fieldgoal.jpg" alt="Field Goal">
                 <div class="container">
                     <div class="carousel-caption">
-                        <h1>Headline:</h1>
-                        <p>news</p>
+                        <h1 id="headline3">Headline:</h1>
+                        <a id="news3">Link</a>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <!--where the team name will display -->
+                        <center>
+                            <h1 id=teamName> </h1>
+                        </center>
                     </div>
                 </div>
             </div>
-        </div>
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
 
-                <!--where the team name will display -->
-                <center>
-                    <h1 id=teamName> </h1>
-                </center>
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="col-lg-4">
+                        <center>
+                            <h2> Injuries/Inactives </h2>
+                            <br>
+                            <h4>
+                                <div id="myDiv"></div>
+                            </h4>
+                        </center>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <center>
+                            <h2>Team News </h2>
+                            <br>
+                            <h4>
+                                <div id="newsDiv"> </div>
+                            </h4>
+                        </center>
+                    </div>
+
+
+                    <div class="col-lg-4">
+                        <center>
+                            <h2>Game Weather </h2>
+                            <br>
+                            <div id="weatherDiv"> </div>
+                        </center>
+
+                        <div id="sunny" class="sunny"></div>
+                        <div id="cloudy" class="cloudy"></div>
+                        <div id="rainy" class="rainy"></div>
+                        <div id="snowy" class="snowy"></div>
+                        <div id="stormy" class="stormy"></div>
+
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="container marketing">
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <img class="img-circle" src="assets/images/betDSI.jpg" alt="Bet DSI" width="140" height="140">
+                    <h2><u>Bet DSI</u></h2><br/>
+                    <p>DSI offers sports betting and online wagering on all major sporting events, including Pro Football, basketball, baseball, hockey, soccer, tennis, NASCAR, golf, horse racing, boxing, rugby, Formula 1 racing, and much more.</p>
+                    <p><br/><a class="btn btn-default" a href="https://www.betdsi.eu/" target="_blank" role="button">Go to Website &raquo;</a></p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="img-circle" src="assets/images/draftKings.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2><u>Draft Kings</u></h2><br/>
+                    <p>DraftKings, Inc. is a leading skill-based Daily Fantasy Sports (DFS) gaming destination for fans in North America and the UK to compete in single-day online games for cash and prizes across the largest variety of professional sports.
+                    </p>
+                    <p><br/><a class="btn btn-default" a href="https://www.draftkings.com/" target="_blank" role="button">Go to Website &raquo;</a></p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="img-circle" src="assets/images/fanduel.png" alt="Generic placeholder image" width="140" height="140">
+                    <h2><u>FANDUEL</u></h2><br/>
+                    <p>FanDuel is the leader in one-day fantasy sports for money with immediate cash payouts, no commitment and leagues from $1 (17 kB)</p>
+                    <p><br/><br/><br/><a class="btn btn-default bottom" a href="https://www.fanduel.com/" target="_blank" role="button">Go to Website &raquo;</a></p>
+                </div>
+            </div><br/><br/><br/><br/>
 
 
-    <div class="container">
-
-        <div class="row">
-
-            <div class="col-lg-4">
-                <center>
-                    <h2> Injuries/Inactives </h2>
-                    <br>
-                    <h4>
-                        <div id="myDiv"></div>
-                    </h4>
-                </center>
-            </div>
-
-            <div class="col-lg-4">
-                <center>
-                    <h2>Team News </h2>
-                    <br>
-                    <h4>
-                        <div id="newsDiv"> </div>
-                    </h4>
-                </center>
-            </div>
-
-
-            <div class="col-lg-4">
-                <center>
-                    <h2>Game Weather </h2>
-                    <br>
-                    <div id="weatherDiv"> </div>
-                </center>
-
-                <div id="sunny" class="sunny"></div>
-                <div id="cloudy" class="cloudy"></div>
-                <div id="rainy" class="rainy"></div>
-                <div id="snowy" class="snowy"></div>
-                <div id="stormy" class="stormy"></div>
-
-            </div>
+            <!-- FOOTER -->
+            <hr>
+            <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>&copy; 2017 Smart Bets TEAM &middot; </p>
+            </footer>
 
         </div>
-    </div>
-    </div>
-
-    <br>
-    <br>
-    <br>
-
-    <div class="container marketing">
-
-        <!-- Three columns of text below the carousel -->
-        <div class="row">
-
-            <div class="col-lg-4">
-                <img class="img-circle" src="assets/images/betDSI.jpg" alt="Bet DSI" width="140" height="140">
-                <h2><u>Bet DSI</u></h2><br/>
-                <p>DSI offers sports betting and online wagering on all major sporting events, including Pro Football, basketball, baseball, hockey, soccer, tennis, NASCAR, golf, horse racing, boxing, rugby, Formula 1 racing, and much more.</p>
-                <p><br/><a class="btn btn-default" a href="https://www.betdsi.eu/" target="_blank" role="button">Go to Website &raquo;</a></p>
-            </div>
-
-            <div class="col-lg-4">
-                <img class="img-circle" src="assets/images/draftKings.png" alt="Generic placeholder image" width="140" height="140">
-                <h2><u>Draft Kings</u></h2><br/>
-                <p>DraftKings, Inc. is a leading skill-based Daily Fantasy Sports (DFS) gaming destination for fans in North America and the UK to compete in single-day online games for cash and prizes across the largest variety of professional sports. </p>
-                <p><br/><a class="btn btn-default" a href="https://www.draftkings.com/" target="_blank" role="button">Go to Website &raquo;</a></p>
-            </div>
-
-            <div class="col-lg-4">
-                <img class="img-circle" src="assets/images/fanduel.png" alt="Generic placeholder image" width="140" height="140">
-                <h2><u>FANDUEL</u></h2><br/>
-                <p>FanDuel is the leader in one-day fantasy sports for money with immediate cash payouts, no commitment and leagues from $1 (17 kB)</p>
-                <p><br/><br/><br/><a class="btn btn-default bottom" a href="https://www.fanduel.com/" target="_blank" role="button">Go to Website &raquo;</a></p>
-            </div>
-        </div><br/><br/><br/><br/>
-
-
-        <!-- FOOTER -->
-        <hr>
-        <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>&copy; 2017 Smart Bets TEAM &middot; </p>
-        </footer>
-
-    </div>
 
 
 
 
-    <!-- Bootstrap core JavaScript
+        <!-- Bootstrap core JavaScript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+        <!-- Placed at the end of the document so the pages load faster -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <script>
-        window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
-    </script>
+        <script>
+            window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')
+        </script>
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-    <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="https://code.jquery.com/jquery.js"></script>
 
 
-    <script src="assets/javascript/app.js"></script>
+        <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

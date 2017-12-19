@@ -2,61 +2,137 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Smart Bets Sign Up!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id=signUp>Smart Bets Sign Up</title>
 
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.8.0/firebase.js"></script>
 
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="assets/css/materialize2.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <link href="assets/css/signUpStyle.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Patrick+Hand|Saira+Extra+Condensed" rel="stylesheet">
+
+    <link href="assets/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
-
-    <nav>
-        <div class="signUpNav-wrapper">
-            <a href="" class="brand-logo center">Sign up for the Smart Bets Newsletter!</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">
+            <a id="logo-container" class="brand-logo">Smart Bets</a>
+            <ul class="right hide-on-med-and-down">
                 <li><a href="index.html">Home</a></li>
             </ul>
+
         </div>
     </nav>
 
-
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="First Name" id="first_name" type="text" class="validate">
-                    <label for="first_name"></label>
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center white-text text-lighten-2">Sign up for the Smart Bets Newsletter!</h1>
+                <div class="row center">
                 </div>
+                <br><br>
 
-                <div class="input-field col s6">
-                    <input placeholder="Last Name" id="last_name" type="text" class="validate">
-                    <label for="last_name"></label>
-                </div>
             </div>
-
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input placeholder="Email" id="email" type="email" class="validate">
-                    <label for="email"></label>
-                </div>
-            </div>
-
-
-            <button class="btn waves-effect waves-light" id="submitBtn" type="submit" name="action">Submit
-	  </button>
-
-
-
-        </form>
+        </div>
+        <div class="parallax"><img src="assets/images/football_stadium.jpg" alt="Unsplashed background img 1"></div>
     </div>
+
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input placeholder="First Name" id="first_name" type="text" class="validate">
+                            <label for="first_name"></label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input placeholder="Last Name" id="last_name" type="text" class="validate">
+                            <label for="last_name"></label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input placeholder="Email" id="email" type="email" class="validate">
+                            <label for="email"></label>
+                        </div>
+                    </div>
+
+
+                    <button class="btn waves-effect green darken-1" id="submitBtn" type="submit" name="action">Submit
+        </button>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <div class="row center">
+                </div>
+            </div>
+        </div>
+        <div class="parallax"><img src="assets/images/footballHelmet.jpg" alt="Unsplashed background img 2"></div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+
+            <div class="row">
+                <div class="col s12 center">
+                    <h3><i class="mdi-content-send brown-text"></i></h3>
+                    <h4>About Us</h4>
+                    <p class="left-align">
+                        <h5>We are your go to place to gather current information rearding NFL teams to help educate your daily betting and fantasy decisions. Some of our features include: game weather conditions, inactive players, and current team news.</h5>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="parallax-container valign-wrapper">
+        <div class="parallax"><img src="assets/images/footballGrass.jpg" alt="football in grass"></div>
+    </div>
+
+    <br><br>
+
+    <footer class="page-footer green darken-1">
+        <div class="footer-copyright">
+            <div class="container">
+                &copy; 2017 Smart Bets TEAM &middot;
+            </div>
+        </div>
+    </footer>
+
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="assets/javascript/materialize.js"></script>
+    <script src="assets/javascript/init.js"></script>
+    <!-- <script src="assets/javascript/app.js"></script> -->
+    <script src="assets/javascript/signUp.js"></script>
+
 </body>
 
 </html>

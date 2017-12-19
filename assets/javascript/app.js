@@ -1,11 +1,9 @@
-console.log("hello");
-
-$("#sunny").hide();
-$("#cloudy").hide();
-$("#rainy").hide();
-$("#snowy").hide();
-$("#stormy").hide();
-
+var sunny = $("#sunny");
+var cloudy = $("#cloudy");
+var rainy = $("#rainy");
+var snowy = $("#snowy");
+var stormy = $("#stormy");
+weatherHide();
 $('#projectName').addClass('animated rubberBand');
 
 //CODE NEEDS TO BE ADDED TO APPEND TEAM NAME TO DOM USING ANIMATION
@@ -128,7 +126,7 @@ var weatherArray = [{
         teamCity: "Santa Clara"
     }, {
         teamName: "TB",
-        teamCity: "Tampa Bay"
+        teamCity: "Tampa"
     },
     {
         teamName: "TEN",
@@ -140,22 +138,70 @@ var weatherArray = [{
     }
 ];
 
-$(".teamList").on("click", function() {
+function getWeek(weekVar) {
+    return Math.max(Math.min(weekVar - 35, 16), 1);
+}
 
-    $("#stormy").show();
+function weatherHide() {
+    sunny.hide();
+    cloudy.hide();
+    rainy.hide();
+    snowy.hide();
+    stormy.hide();
+};
 
-
+function weatherAnimate(weather) {
+    weatherHide();
+    weather.show();
     $('#weatherDiv').addClass('animated shake');
-
     $('#weatherDiv').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',
         function() {
             $(this).removeClass('animated shake');
-
         });
+};
+
+$(function() {
+    var params = {
+        // Request parameters
+    };
+
+    $.ajax({
+            url: "https://api.fantasydata.net/v3/nfl/stats/JSON/News?" + $.param(params),
+            beforeSend: function(xhrObj) {
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "e25c629f0b7d4fbe9bd5cc6e5a9fe8ad");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            // alert("success");
+            console.log(data);
 
 
-    var team = $(this).attr("data-name")
+            for (var i = 0; i < 3; i++) {
 
+                var hNum = i + 1;
+
+                $("#headline" + hNum).text(data[i].Title);
+
+                $("#news" + hNum).attr({
+                    text: "Link to Article",
+                    href: data[i].Url,
+                    target: "_blank",
+                    class: "noDot"
+                })
+            }
+
+        })
+        .fail(function() {
+            // alert("error");
+        });
+});
+
+$(".teamList").on("click", function() {
+    var team = $(this).attr("data-name");
     var gamesArray = [];
     var gamesObj = {
         homeTeam: "",
@@ -174,10 +220,10 @@ $(".teamList").on("click", function() {
         };
 
         $.ajax({
-                url: "https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/2017/15?" + $.param(params),
+                url: "https://api.fantasydata.net/v3/nfl/scores/JSON/ScoresByWeek/2017/" + getWeek(moment().isoWeek()) + "?" + $.param(params),
                 beforeSend: function(xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "25f5b86281bf4ec2b54615551885b55b");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "e25c629f0b7d4fbe9bd5cc6e5a9fe8ad");
                 },
                 type: "GET",
                 // Request body
@@ -193,9 +239,6 @@ $(".teamList").on("click", function() {
                         homeTeam: data[i].HomeTeam,
                         awayTeam: data[i].AwayTeam
                     }
-
-                    // console.log(gamesObj);
-                    // console.log(team);
                     gamesArray.push(gamesObj);
                 }
 
@@ -204,31 +247,28 @@ $(".teamList").on("click", function() {
                 for (var i = 0; i < gamesArray.length; i++) {
                     if (team == gamesArray[i].homeTeam || team == gamesArray[i].awayTeam) {
                         secondArray.push(gamesArray[i].homeTeam);
-
                     }
-
-
-
                 }
 
                 console.log(secondArray);
-
                 var city = secondArray[0];
+                var hostSite = "";
 
                 for (var i = 0; i < weatherArray.length; i++) {
                     if (city === weatherArray[i].teamName) {
 
-                        thirdArray.push(weatherArray[i].teamCity);
+                        hostSite = weatherArray[i].teamCity;
 
                     }
                 }
-                console.log(thirdArray[0]);
 
-                var hostSite = thirdArray[0];
+                console.log(hostSite);
 
                 if (hostSite === "Dome") {
                     var domeText = "This game is played in a dome";
                     $("#weatherDiv").append(domeText);
+
+                    weatherHide();
                 } else {
                     var APIkey = "cce5a44b1d7a13fb2fa6a72a5b7e150d";
                     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + hostSite + "&appid=" + APIkey;
@@ -245,13 +285,19 @@ $(".teamList").on("click", function() {
 
                         var cityDiv = $("<div>").html("Game Site: " + response.name);
                         var windDiv = $("<div>").html("Current Wind Speed: " + response.wind.speed + " MPH");
-                        var humidityDiv = $("<div>").html("Current Humidity: " + response.main.humidity + "degrees, F");
+                        var humidityDiv = $("<div>").html("Current Humidity: " + response.main.humidity + " degrees, F");
                         var tempDiv = $("<div>").html("Current Temperature: " + currentTemp + " degrees, F");
 
                         $("#weatherDiv").append(cityDiv);
                         cityDiv.append(tempDiv);
                         tempDiv.append(windDiv);
                         windDiv.append(humidityDiv);
+
+                        if (currentTemp < 32) {
+                            weatherAnimate(stormy);
+                        } else {
+                            weatherAnimate(sunny);
+                        }
 
                     })
                 }
@@ -267,10 +313,10 @@ $(".teamList").on("click", function() {
         };
 
         $.ajax({
-                url: "https://api.fantasydata.net/v3/nfl/stats/JSON/Injuries/2017/14/" + team + "?" + $.param(params),
+                url: "https://api.fantasydata.net/v3/nfl/stats/JSON/Injuries/2017/" + getWeek(moment().isoWeek()) + "/" + team + "?" + $.param(params),
                 beforeSend: function(xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "25f5b86281bf4ec2b54615551885b55b");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "e25c629f0b7d4fbe9bd5cc6e5a9fe8ad");
                 },
                 type: "GET",
                 // Request body
@@ -289,7 +335,6 @@ $(".teamList").on("click", function() {
                         num++;
                         var newInjDiv = $("<ul>");
                         newInjDiv.text(data[i].Position + " " + data[i].Name + " is Inactive");
-
                         $("#myDiv").append(newInjDiv);
                     }
                 }
@@ -309,15 +354,13 @@ $(".teamList").on("click", function() {
                 url: "https://api.fantasydata.net/v3/nfl/stats/JSON/NewsByTeam/" + team + "?" + $.param(params),
                 beforeSend: function(xhrObj) {
                     // Request headers
-                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "25f5b86281bf4ec2b54615551885b55b");
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "e25c629f0b7d4fbe9bd5cc6e5a9fe8ad");
                 },
                 type: "GET",
                 // Request body
                 data: "{body}",
             })
             .done(function(data) {
-                // alert("success");
-                // console.log(data);
 
                 $("#newsDiv").empty();
 
@@ -329,15 +372,6 @@ $(".teamList").on("click", function() {
                         target: "_blank",
                         class: "noDot"
                     });
-
-                    // newA.attr("href", data[i].Url);
-
-                    // newNewsDiv.append($("<a>"));
-                    // newA.attr("src", data[i].Url);
-
-                    // newA.html(data[i].Title);
-
-                    // newNewsDiv.append(newA);
 
                     $("#newsDiv").append(newNewsDiv);
                     newNewsDiv.append(newA);
