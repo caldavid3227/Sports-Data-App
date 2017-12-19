@@ -7,7 +7,9 @@ weatherHide();
 $('#projectName').addClass('animated rubberBand');
 
 //CODE NEEDS TO BE ADDED TO APPEND TEAM NAME TO DOM USING ANIMATION
-$('#teamName').addClass('animated rubberBand');
+// $('#teamName').addClass('animated rubberBand');
+
+
 
 var weatherArray = [{
         teamName: "IND",
@@ -139,7 +141,7 @@ var weatherArray = [{
 ];
 
 function getWeek(weekVar) {
-    return Math.max(Math.min(weekVar -35, 16), 1);
+    return Math.max(Math.min(weekVar - 35, 16), 1);
 }
 
 function weatherHide() {
@@ -261,7 +263,7 @@ $(".teamList").on("click", function() {
 
                     }
                 }
-               
+
                 console.log(hostSite);
 
                 if (hostSite === "Dome") {
@@ -385,4 +387,3 @@ $(".teamList").on("click", function() {
 
 
 })
-
