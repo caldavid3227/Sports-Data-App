@@ -7,7 +7,9 @@ weatherHide();
 $('#projectName').addClass('animated rubberBand');
 
 //CODE NEEDS TO BE ADDED TO APPEND TEAM NAME TO DOM USING ANIMATION
-$('#teamName').addClass('animated rubberBand');
+// $('#teamName').addClass('animated rubberBand');
+
+
 
 var weatherArray = [{
         teamName: "IND",

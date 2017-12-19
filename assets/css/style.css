@@ -16,6 +16,11 @@ ul {
 }
 
 
+
+
+
+
+
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
 
@@ -29,6 +34,8 @@ ul {
     left: 0;
     z-index: 20;
 }
+
+
 
 
 /* Flip around the padding for proper display in narrow viewports */
@@ -48,6 +55,9 @@ ul {
 }
 
 
+
+
+
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
 
@@ -60,11 +70,15 @@ ul {
 }
 
 
+
+
 /* Since positioning the image, we need to help out the caption */
 
 .carousel-caption {
     z-index: 10;
 }
+
+
 
 
 /* Declare heights because of positioning of img element */
@@ -87,9 +101,8 @@ ul {
     background-color: #000000;
 }
 
-.myDiv {
-    color: pink;
-}
+
+
 
 
 /* MARKETING CONTENT
@@ -111,6 +124,57 @@ ul {
     margin-right: 10px;
     margin-left: 10px;
 }
+
+
+
+
+/*////FONT Style ////*/
+
+#weatherDiv {
+    font-family: 'Bitter';
+    -webkit-animation-duration: 1.5s;
+}
+
+#myDiv {
+    font-family: 'Bitter';
+    -webkit-animation-duration: 1.5s;
+}
+
+#newsDiv {
+    font-family: 'Bitter';
+    -webkit-animation-duration: 1.5s;
+}
+
+h1 {
+    font-family: 'Risque';
+}
+
+h2 {
+    font-family: 'Risque';
+}
+
+p {
+    font-family: 'Risque';
+    font-size: 16px;
+}
+
+#navbar {
+    font-family: 'Risque';
+    font-size: 20px;
+}
+
+#projectName {
+    font-family: 'Oleo Script';
+    font-size: 30px;
+}
+
+
+
+
+
+
+
+/*//// START OF WEATHER ANIMATIONS ////*/
 
 .sunny {
     animation: sunny 15s linear infinite;
@@ -158,132 +222,9 @@ ul {
 }
 
 
-/* CLOUDY */
-
-.cloudy {
-    animation: cloudy 5s ease-in-out infinite;
-    background: #FFFFFF;
-    border-radius: 50%;
-    box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 25px -25px, #FFFFFF 30px 10px, #FFFFFF 60px 15px 0 -10px, #FFFFFF 85px 5px 0 -5px;
-    height: 50px;
-    width: 50px;
-    margin-left: -110px;
-    margin-top: 190px;
-    position: absolute;
-    left: 255px;
-    top: 70px;
-}
-
-.cloudy:after {
-    animation: cloudy_shadow 5s ease-in-out infinite;
-    background: #000000;
-    border-radius: 50%;
-    content: '';
-    height: 15px;
-    width: 120px;
-    opacity: 0.2;
-    position: absolute;
-    left: 5px;
-    bottom: -60px;
-    transform: scale(1);
-}
-
-@keyframes cloudy {
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes cloudy_shadow {
-    50% {
-        transform: translateY(20px) scale(.7);
-        opacity: .05;
-    }
-}
 
 
-/* RAINY */
 
-.rainy {
-    animation: rainy 5s ease-in-out infinite 1s;
-    background: #CCCCCC;
-    border-radius: 50%;
-    box-shadow: #CCCCCC 65px -15px 0 -5px, #CCCCCC 25px -25px, #CCCCCC 30px 10px, #CCCCCC 60px 15px 0 -10px, #CCCCCC 85px 5px 0 -5px;
-    display: block;
-    height: 50px;
-    width: 50px;
-    margin-left: -280px;
-    margin-top: 180px;
-    position: absolute;
-    left: 427px;
-    top: 70px;
-}
-
-.rainy:after {
-    animation: rainy_shadow 5s ease-in-out infinite 1s;
-    background: #000000;
-    border-radius: 50%;
-    content: '';
-    height: 15px;
-    width: 120px;
-    opacity: 0.2;
-    position: absolute;
-    left: 5px;
-    bottom: -60px;
-    transform: scale(1);
-}
-
-.rainy:before {
-    animation: rainy_rain .7s infinite linear;
-    content: '';
-    background: #CCCCCC;
-    border-radius: 50%;
-    display: block;
-    height: 6px;
-    width: 3px;
-    opacity: 0.3;
-    transform: scale(.9);
-}
-
-@keyframes rainy {
-    50% {
-        transform: translateY(-20px);
-    }
-}
-
-@keyframes rainy_shadow {
-    50% {
-        transform: translateY(20px) scale(.7);
-        opacity: 0.05;
-    }
-}
-
-@keyframes rainy_rain {
-    0% {
-        box-shadow: rgba(0, 0, 0, 0) 30px 30px, rgba(0, 0, 0, 0) 40px 40px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
-    }
-    25% {
-        box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 120px, rgba(0, 0, 0, 0) 80px 120px, #000 110px 70px, #000 90px 60px;
-    }
-    26% {
-        box-shadow: #000 30px 45px, #000 40px 60px, #000 50px 90px, #000 55px 65px, rgba(0, 0, 0, 0) 70px 40px, rgba(0, 0, 0, 0) 80px 20px, #000 110px 70px, #000 90px 60px;
-    }
-    50% {
-        box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 100px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
-    }
-    51% {
-        box-shadow: #000 30px 70px, #000 40px 80px, rgba(0, 0, 0, 0) 50px 45px, #000 55px 80px, #000 70px 60px, #000 80px 45px, #000 110px 95px, #000 90px 85px;
-    }
-    75% {
-        box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 95px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 120px, rgba(0, 0, 0, 0) 90px 110px;
-    }
-    76% {
-        box-shadow: #000 30px 95px, #000 40px 100px, #000 50px 60px, rgba(0, 0, 0, 0) 55px 35px, #000 70px 80px, #000 80px 70px, rgba(0, 0, 0, 0) 110px 25px, rgba(0, 0, 0, 0) 90px 15px;
-    }
-    100% {
-        box-shadow: rgba(0, 0, 0, 0) 30px 120px, rgba(0, 0, 0, 0) 40px 120px, #000 50px 75px, #000 55px 50px, #000 70px 100px, #000 80px 95px, #000 110px 45px, #000 90px 35px;
-    }
-}
 
 
 /* STORMY */
@@ -292,7 +233,13 @@ ul {
     animation: stormy 5s ease-in-out infinite;
     background: #222222;
     border-radius: 50%;
-    box-shadow: #222222 65px -15px 0 -5px, #222222 25px -25px, #222222 30px 10px, #222222 60px 15px 0 -10px, #222222 85px 5px 0 -5px;
+
+    box-shadow: #222222 65px -15px 0 -5px,
+    #222222 25px -25px,
+    #222222 30px 10px,
+    #222222 60px 15px 0 -10px,
+    #222222 85px 5px 0 -5px;
+
     height: 50px;
     width: 50px;
     margin-left: 120px;
@@ -366,13 +313,21 @@ ul {
 }
 
 
+
+
 /* SNOWY */
 
 .snowy {
     animation: snowy 5s ease-in-out infinite 1s;
     background: #FFFFFF;
     border-radius: 50%;
-    box-shadow: #FFFFFF 65px -15px 0 -5px, #FFFFFF 25px -25px, #FFFFFF 30px 10px, #FFFFFF 60px 15px 0 -10px, #FFFFFF 85px 5px 0 -5px;
+
+    box-shadow: #FFFFFF 65px -15px 0 -5px,
+    #FFFFFF 25px -25px,
+    #FFFFFF 30px 10px,
+    #FFFFFF 60px 15px 0 -10px,
+    #FFFFFF 85px 5px 0 -5px;
+
     display: block;
     height: 50px;
     width: 50px;
@@ -423,30 +378,89 @@ ul {
 
 @keyframes snowy_snow {
     0% {
-        box-shadow: rgba(238, 238, 238, 0) 30px 30px, rgba(238, 238, 238, 0) 40px 40px, #EEEEEE 50px 75px, #EEEEEE 55px 50px, #EEEEEE 70px 100px, #EEEEEE 80px 95px, #EEEEEE 110px 45px, #EEEEEE 90px 35px;
+
+        box-shadow: rgba(238, 238, 238, 0) 30px 30px,
+        rgba(238, 238, 238, 0) 40px 40px,
+        #EEEEEE 50px 75px,
+        #EEEEEE 55px 50px,
+        #EEEEEE 70px 100px,
+        #EEEEEE 80px 95px,
+        #EEEEEE 110px 45px,
+        #EEEEEE 90px 35px;
     }
     25% {
-        box-shadow: #EEEEEE 30px 45px, #EEEEEE 40px 60px, #EEEEEE 50px 90px, #EEEEEE 55px 65px, rgba(238, 238, 238, 0) 70px 120px, rgba(238, 238, 238, 0) 80px 120px, #EEEEEE 110px 70px, #EEEEEE 90px 60px;
+        box-shadow: #EEEEEE 30px 45px,
+        #EEEEEE 40px 60px,
+        #EEEEEE 50px 90px,
+        #EEEEEE 55px 65px,
+        rgba(238, 238, 238, 0) 70px 120px,
+        rgba(238, 238, 238, 0) 80px 120px,
+        #EEEEEE 110px 70px,
+        #EEEEEE 90px 60px;
     }
     26% {
-        box-shadow: #EEEEEE 30px 45px, #EEEEEE 40px 60px, #EEEEEE 50px 90px, #EEEEEE 55px 65px, rgba(238, 238, 238, 0) 70px 40px, rgba(238, 238, 238, 0) 80px 20px, #EEEEEE 110px 70px, #EEEEEE 90px 60px;
+        box-shadow: #EEEEEE 30px 45px,
+        #EEEEEE 40px 60px,
+        #EEEEEE 50px 90px,
+        #EEEEEE 55px 65px,
+        rgba(238, 238, 238, 0) 70px 40px,
+        rgba(238, 238, 238, 0) 80px 20px,
+        #EEEEEE 110px 70px,
+        #EEEEEE 90px 60px;
     }
     50% {
-        box-shadow: #EEEEEE 30px 70px, #EEEEEE 40px 80px, rgba(238, 238, 238, 0) 50px 100px, #EEEEEE 55px 80px, #EEEEEE 70px 60px, #EEEEEE 80px 45px, #EEEEEE 110px 95px, #EEEEEE 90px 85px;
+        box-shadow: #EEEEEE 30px 70px,
+        #EEEEEE 40px 80px,
+        rgba(238, 238, 238, 0) 50px 100px,
+        #EEEEEE 55px 80px,
+        #EEEEEE 70px 60px,
+        #EEEEEE 80px 45px,
+        #EEEEEE 110px 95px,
+        #EEEEEE 90px 85px;
     }
     51% {
-        box-shadow: #EEEEEE 30px 70px, #EEEEEE 40px 80px, rgba(238, 238, 238, 0) 50px 45px, #EEEEEE 55px 80px, #EEEEEE 70px 60px, #EEEEEE 80px 45px, #EEEEEE 110px 95px, #EEEEEE 90px 85px;
+        box-shadow: #EEEEEE 30px 70px,
+        #EEEEEE 40px 80px,
+        rgba(238, 238, 238, 0) 50px 45px,
+        #EEEEEE 55px 80px,
+        #EEEEEE 70px 60px,
+        #EEEEEE 80px 45px,
+        #EEEEEE 110px 95px,
+        #EEEEEE 90px 85px;
     }
     75% {
-        box-shadow: #EEEEEE 30px 95px, #EEEEEE 40px 100px, #EEEEEE 50px 60px, rgba(238, 238, 238, 0) 55px 95px, #EEEEEE 70px 80px, #EEEEEE 80px 70px, rgba(238, 238, 238, 0) 110px 120px, rgba(238, 238, 238, 0) 90px 110px;
+        box-shadow: #EEEEEE 30px 95px,
+        #EEEEEE 40px 100px,
+        #EEEEEE 50px 60px,
+        rgba(238, 238, 238, 0) 55px 95px,
+        #EEEEEE 70px 80px,
+        #EEEEEE 80px 70px,
+        rgba(238, 238, 238, 0) 110px 120px,
+        rgba(238, 238, 238, 0) 90px 110px;
     }
     76% {
-        box-shadow: #EEEEEE 30px 95px, #EEEEEE 40px 100px, #EEEEEE 50px 60px, rgba(238, 238, 238, 0) 55px 35px, #EEEEEE 70px 80px, #EEEEEE 80px 70px, rgba(238, 238, 238, 0) 110px 25px, rgba(238, 238, 238, 0) 90px 15px;
+        box-shadow: #EEEEEE 30px 95px,
+        #EEEEEE 40px 100px,
+        #EEEEEE 50px 60px,
+        rgba(238, 238, 238, 0) 55px 35px,
+        #EEEEEE 70px 80px,
+        #EEEEEE 80px 70px,
+        rgba(238, 238, 238, 0) 110px 25px,
+        rgba(238, 238, 238, 0) 90px 15px;
     }
     100% {
-        box-shadow: rgba(238, 238, 238, 0) 30px 120px, rgba(238, 238, 238, 0) 40px 120px, #EEEEEE 50px 75px, #EEEEEE 55px 50px, #EEEEEE 70px 100px, #EEEEEE 80px 95px, #EEEEEE 110px 45px, #EEEEEE 90px 35px;
+        box-shadow: rgba(238, 238, 238, 0) 30px 120px,
+        rgba(238, 238, 238, 0) 40px 120px,
+        #EEEEEE 50px 75px,
+        #EEEEEE 55px 50px,
+        #EEEEEE 70px 100px,
+        #EEEEEE 80px 95px,
+        #EEEEEE 110px 45px,
+        #EEEEEE 90px 35px;
     }
 }
+
+
 
 
 /* RESPONSIVE CSS
@@ -465,16 +479,19 @@ ul {
         padding-right: 0;
         padding-left: 0;
     }
+
     /* The navbar becomes detached from the top, so we round the corners */
     .navbar-wrapper .navbar {
         border-radius: 4px;
     }
+
     /* Bump up size of carousel content */
     .carousel-caption p {
         margin-bottom: 20px;
         font-size: 21px;
         line-height: 1.4;
     }
+
     .featurette-heading {
         font-size: 50px;
     }

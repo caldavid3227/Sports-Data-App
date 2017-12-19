@@ -21,7 +21,7 @@ database.ref().on("child_added", function(snapshot, preChildKey) {
 
 $("#submitBtn").on("click", function() {
     event.preventDefault();
-    
+
     var firstName = $("#first_name").val().trim();
     var lastName = $("#last_name").val().trim();
     var email = $("#email").val().trim();
@@ -43,8 +43,3 @@ $("#submitBtn").on("click", function() {
     $("#last_name").val("");
     $("#email").val("");
 });
-
-
-
-
-
