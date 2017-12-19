@@ -139,7 +139,7 @@ var weatherArray = [{
 ];
 
 function getWeek(weekVar) {
-    return Math.max(Math.min(weekVar -35, 16), 1);
+    return Math.max(Math.min(weekVar - 35, 16), 1);
 }
 
 function weatherHide() {
@@ -261,7 +261,7 @@ $(".teamList").on("click", function() {
 
                     }
                 }
-               
+
                 console.log(hostSite);
 
                 if (hostSite === "Dome") {
@@ -362,7 +362,6 @@ $(".teamList").on("click", function() {
             })
             .done(function(data) {
 
-
                 $("#newsDiv").empty();
 
                 for (var i = 0; i < 10; i++) {
@@ -385,4 +384,3 @@ $(".teamList").on("click", function() {
 
 
 })
-
